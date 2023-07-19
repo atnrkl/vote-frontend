@@ -1,0 +1,25 @@
+{
+  "surveyId": "493E2C81ED567189",
+  "surveyName": "Hello World?",
+  "surveyItems": [
+    {
+      "id": "497C94A0A12395E7",
+      "question": "Hello World?",
+      "options": [
+        {
+          "option": "Aleykum",
+          "voteCount": 0,
+          "_id": "64b7c920f0c2a767ee9daa73"
+        },
+        {
+          "option": "Selam",
+          "voteCount": 0,
+          "_id": "64b7c920f0c2a767ee9daa74"
+        }
+      ],
+      "_id": "64b7c920f0c2a767ee9daa72"
+    }
+  ],
+  "_id": "64b7c920f0c2a767ee9daa71",
+  "__v": 0
+}
