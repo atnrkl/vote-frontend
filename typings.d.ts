@@ -15,3 +15,20 @@ export type Question = {
   title?: string;
   options?: Option[];
 };
+
+export interface SurveyResData {
+  surveyId: string;
+  surveyName: string;
+  surveyItems: SurveyResDataQuestions[];
+}
+
+export interface SurveyResDataQuestions {
+  id: string;
+  question: string;
+  options: SurveyResDataOptions[];
+}
+
+export interface SurveyResDataOptions {
+  option: string;
+  voteCount: number;
+}

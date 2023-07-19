@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Router, useParams, useNavigate } from "react-router-dom";
 import dataDummy from "../assets/resdata.json";
 import { toast } from "react-hot-toast";
+import { SurveyResData } from "../../typings";
 
 type Props = {};
 
@@ -10,15 +11,22 @@ const VotePoll = (props: Props) => {
   const [isVoted, setIsVoted] = useState(false);
   const navigate = useNavigate();
   let { surveyId } = useParams();
+  const [surveyData, setSurveyData] = useState<SurveyResData>();
 
   useEffect(() => {
     if (isVoted) {
       navigate(`/result/${surveyId}`);
     }
   }, [isVoted]);
-  //   useEffect(() => {
-  //     axios.get("");
-  //   }, [surveyId]);
+
+  const getSurveyData = async () => {
+    const res = await axios.get(`http://localhost/3000/vote/${surveyId}`);
+    setSurveyData(res.data);
+  };
+
+  useEffect(() => {
+    getSurveyData();
+  }, [surveyId]);
 
   const handleVote = async (qIndex: number, oIndex: number) => {
     const votes = {
@@ -38,7 +46,7 @@ const VotePoll = (props: Props) => {
   return (
     <main>
       <div>
-        {dataDummy.surveyItems.map((question, qIndex) => {
+        {surveyData?.surveyItems.map((question, qIndex) => {
           return (
             <div key={qIndex}>
               <h1 className="mb-5 font-semibold text-lg bg-slate-100 p-2 rounded-md">
