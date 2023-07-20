@@ -2,9 +2,8 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { Poll, Question } from "../../typings";
 import idGenerator from "../utils/idgenerator";
-type Props = {};
 
-const CreatePoll = (props: Props) => {
+const CreatePoll = () => {
   const [option, setOption] = useState("");
   const [title, setTitle] = useState("");
   const [questions, setQuestions] = useState<Question[]>();

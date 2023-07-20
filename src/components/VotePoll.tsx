@@ -1,13 +1,11 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Router, useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import dataDummy from "../assets/resdata.json";
 import { toast } from "react-hot-toast";
 import { SurveyResData } from "../../typings";
 
-type Props = {};
-
-const VotePoll = (props: Props) => {
+const VotePoll = () => {
   const [isVoted, setIsVoted] = useState(false);
   const navigate = useNavigate();
   let { surveyId } = useParams();
@@ -30,8 +28,8 @@ const VotePoll = (props: Props) => {
 
   const handleVote = async (qIndex: number, oIndex: number) => {
     const votes = {
-      qIndex,
-      oIndex,
+      surveyId,
+      answer: [{ qIndex, oIndex }],
     };
 
     const res = await axios.post("url to post", votes);
