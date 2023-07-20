@@ -18,7 +18,9 @@ const VotePoll = () => {
   }, [isVoted]);
 
   const getSurveyData = async () => {
-    const res = await axios.get(`http://localhost/3000/vote/${surveyId}`);
+    const res = await axios.get(
+      `http://localhost/3000/survey/vote/?surveyId=${surveyId}`
+    );
     setSurveyData(res.data);
   };
 
