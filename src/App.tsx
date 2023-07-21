@@ -1,5 +1,4 @@
 import "./App.css";
-import CreatePoll from "./components/CreatePoll";
 import CreateOnePoll from "./components/CreateOneQuestionPoll";
 
 function App() {
