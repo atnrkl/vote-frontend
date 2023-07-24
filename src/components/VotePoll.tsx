@@ -19,7 +19,13 @@ const VotePoll = () => {
 
   const getSurveyData = async () => {
     const res = await axios.get(
-      `http://localhost/3000/survey/vote/?surveyId=${surveyId}`
+      `http://localhost/3000/survey/vote/?surveyId=${surveyId}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
     );
 
     console.log("this is res for get ", res);

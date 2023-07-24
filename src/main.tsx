@@ -11,10 +11,11 @@ import VoteSurveyPage from "./pages/VoteSurveyPage.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
+
     element: <CreateSurveyPage />,
   },
   {
-    path: "/vote/:surveyId",
+    path: "/:surveyId",
     element: <VoteSurveyPage />,
   },
 ]);

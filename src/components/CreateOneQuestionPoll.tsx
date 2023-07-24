@@ -3,14 +3,12 @@ import { toast } from "react-hot-toast";
 import idGenerator from "../utils/idgenerator";
 import axios from "axios";
 
-type Props = {};
-
 type Option = {
   option: string;
   count: 0;
 };
 
-const CreatePoll = (props: Props) => {
+const CreatePoll = () => {
   const [option, setOption] = useState<Option[]>([]);
   const [optionInput, setOptionInput] = useState("");
   const [title, setPollTitle] = useState("");
@@ -57,7 +55,11 @@ const CreatePoll = (props: Props) => {
     };
 
     try {
-      const res = await axios.post("http://localhost:3000/survey", newPoll);
+      const res = await axios.post("http://localhost:3000/survey", newPoll, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
       if (res) {
         // return a link for votepage
