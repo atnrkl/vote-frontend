@@ -9,10 +9,12 @@
         "options": [
           {
             "count": 0,
+            "option": "barbie",
             "_id": "64be0c9057aa740127138b44"
           },
           {
             "count": 0,
+            "option": "oppie",
             "_id": "64be0c9057aa740127138b45"
           }
         ],
