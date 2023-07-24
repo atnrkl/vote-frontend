@@ -1,0 +1,24 @@
+[
+  {
+    "_id": "64be0c9057aa740127138b42",
+    "surveyId": "2DF41978",
+    "surveyItems": [
+      {
+        "id": "C2E10D2C",
+        "question": "hangisi",
+        "options": [
+          {
+            "count": 0,
+            "_id": "64be0c9057aa740127138b44"
+          },
+          {
+            "count": 0,
+            "_id": "64be0c9057aa740127138b45"
+          }
+        ],
+        "_id": "64be0c9057aa740127138b43"
+      }
+    ],
+    "__v": 0
+  }
+]

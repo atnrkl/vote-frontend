@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import dataDummy from "../assets/resdata.json";
+import dataDummy from "../assets/votegetDummy.json";
+
 import { toast } from "react-hot-toast";
 import { SurveyResData } from "../../typings";
 
@@ -17,24 +18,20 @@ const VotePoll = () => {
     }
   }, [isVoted]);
 
-  const getSurveyData = async () => {
-    const res = await axios.get(
-      `http://localhost/3000/survey/vote/?surveyId=${surveyId}`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-      }
-    );
+  //! uncomment at production
 
-    console.log("this is res for get ", res);
-    setSurveyData(res.data);
-  };
+  // const getSurveyData = async () => {
+  //   const res = await axios.get(
+  //     `http://localhost/3000/survey/vote/${surveyId}`
+  //   );
 
-  useEffect(() => {
-    getSurveyData();
-  }, [surveyId]);
+  //   console.log("this is res for get ", res);
+  //   setSurveyData(res.data);
+  // };
+
+  // useEffect(() => {
+  //   getSurveyData();
+  // }, [surveyId]);
 
   const handleVote = async (qIndex: number, oIndex: number) => {
     const votes = {
@@ -54,7 +51,7 @@ const VotePoll = () => {
   return (
     <main>
       <div>
-        {surveyData?.surveyItems.map((question, qIndex) => {
+        {dataDummy[0]?.surveyItems.map((question, qIndex) => {
           return (
             <div key={qIndex}>
               <h1 className="mb-5 font-semibold text-lg bg-slate-100 p-2 rounded-md">
